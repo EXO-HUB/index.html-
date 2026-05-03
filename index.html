@@ -3,136 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXO HUB | Script Library</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>EXO HUB | Key System</title>
+
+    <meta property="og:title" content="EXO HUB | Universal Access" />
+    <meta property="og:description" content="Ultimate script hub and premium features. Get your access key now." />
+    <meta property="og:url" content="https://exo-hub.github.io/EXO-HUB-KEY-SYSTEM-FIX/" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/ajhayigop4/EXO-HUB-KEY-SYSTEM-FIX/main/preview.png" />
+    <meta name="theme-color" content="#bc13fe">
+    <meta name="twitter:card" content="summary_large_image">
+
     <style>
         body {
-            background-color: #0a0a0a;
-            color: #eeeeee;
+            background-color: #050505;
+            color: #ffffff;
             font-family: 'Inter', sans-serif;
-        }
-        .orbitron { font-family: 'Orbitron', sans-serif; }
-        
-        .glass-card {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .glass-card:hover {
-            border-color: #a855f7;
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
-        .glow-text {
-            text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+        .container {
+            width: 360px;
+            text-align: center;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #a855f7; }
+        .system-status {
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #444;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .brand-container {
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .brand-name {
+            font-size: 45px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .purple {
+            color: #bc13fe;
+            text-shadow: 0 0 20px rgba(188, 19, 254, 0.7);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #bc13fe;
+            margin-left: 5px;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .sub-text {
+            font-size: 12px;
+            color: #777;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .key-section {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .key-display {
+            font-family: 'Courier New', monospace;
+            font-size: 22px;
+            color: #ffffff;
+            background: #000;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed #333;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .copy-btn {
+            background: #bc13fe;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .copy-btn:hover { background: #d450ff; }
+
+        .live-sync {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #00ff88;
+        }
+
+        .dot {
+            height: 7px;
+            width: 7px;
+            background-color: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff88;
+        }
     </style>
 </head>
-<body class="pb-20">
+<body>
 
-    <header class="py-12 px-4 text-center">
-        <h1 class="orbitron text-5xl font-bold tracking-[0.2em] text-white glow-text uppercase">
-            EXO <span class="text-purple-500 text-6xl">HUB</span>
-        </h1>
-        <p class="text-gray-500 mt-4 tracking-widest uppercase text-sm">EXO ON TOP • Premium Utility Library</p>
-    </header>
+    <div class="container">
+        <div class="system-status">System Active</div>
+        
+        <div class="brand-container">
+            <h1 class="brand-name">
+                <span id="typed-text"></span><span class="cursor">&nbsp;</span>
+            </h1>
+        </div>
+        
+        <div class="sub-text">Premium script access for EXO community.</div>
 
-    <div class="max-w-2xl mx-auto px-6 mb-12">
-        <div class="relative">
-            <input type="text" id="searchInput" placeholder="Search for a game or utility..." 
-                class="w-full p-5 pl-6 rounded-2xl bg-[#161616] border border-gray-800 focus:outline-none focus:border-purple-600 focus:ring-1 focus:ring-purple-600 transition-all text-white placeholder-gray-600 shadow-2xl">
-            <div class="absolute right-5 top-5 text-gray-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </div>
+        <div class="key-section">
+            <div class="key-display" id="key-text">••••••••••</div>
+            <button class="copy-btn" onclick="handleCopy()">Copy Key</button>
+        </div>
+
+        <div class="live-sync">
+            <div class="dot"></div>
+            LIVE SYNC READY
         </div>
     </div>
 
-    <main class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="scriptGrid">
-        
-        <div class="glass-card p-6 rounded-3xl script-item" data-title="fps flick">
-            <div class="h-44 bg-gradient-to-br from-purple-900/40 to-transparent rounded-2xl mb-5 flex flex-col items-center justify-center border border-purple-500/10">
-                <span class="text-purple-400 orbitron font-bold text-xl mb-1">FPS FLICK</span>
-                <span class="text-[10px] text-purple-300/50 tracking-widest">STABLE VERSION</span>
-            </div>
-            <h2 class="text-2xl font-bold mb-1 text-white">FPS FLICK</h2>
-            <p class="text-xs font-mono text-gray-500 mb-6">ID: 136801880565837</p>
-            <button onclick="copyScript('loadstring(game:HttpGet(\'https://example.com/script.lua\'))()', this)" 
-                class="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-bold transition-all active:scale-95 flex items-center justify-center gap-2">
-                <span>Copy Loadstring</span>
-            </button>
-        </div>
-
-        <div class="glass-card p-6 rounded-3xl script-item" data-title="blox fruits hub autofarm">
-            <div class="h-44 bg-gradient-to-br from-blue-900/40 to-transparent rounded-2xl mb-5 flex flex-col items-center justify-center border border-blue-500/10">
-                <span class="text-blue-400 orbitron font-bold text-xl mb-1">BLOX FRUITS</span>
-                <span class="text-[10px] text-blue-300/50 tracking-widest">AUTO-FARM</span>
-            </div>
-            <h2 class="text-2xl font-bold mb-1 text-white">Blox Fruits Hub</h2>
-            <p class="text-xs font-mono text-gray-500 mb-6">ID: 2753915549</p>
-            <button onclick="copyScript('loadstring(game:HttpGet(\'https://example.com/blox.lua\'))()', this)" 
-                class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all active:scale-95 flex items-center justify-center gap-2">
-                <span>Copy Loadstring</span>
-            </button>
-        </div>
-
-        <div class="glass-card p-6 rounded-3xl script-item" data-title="universal aimbot">
-            <div class="h-44 bg-gradient-to-br from-red-900/40 to-transparent rounded-2xl mb-5 flex flex-col items-center justify-center border border-red-500/10">
-                <span class="text-red-400 orbitron font-bold text-xl mb-1">AIMBOT</span>
-                <span class="text-[10px] text-red-300/50 tracking-widest">UNIVERSAL</span>
-            </div>
-            <h2 class="text-2xl font-bold mb-1 text-white">Universal Aimbot</h2>
-            <p class="text-xs font-mono text-gray-500 mb-6">WORKS ON ALL GAMES</p>
-            <button onclick="copyScript('-- Universal Aimbot Loadstring', this)" 
-                class="w-full py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl font-bold transition-all active:scale-95 flex items-center justify-center gap-2">
-                <span>Copy Loadstring</span>
-            </button>
-        </div>
-
-    </main>
-
     <script>
-        // Copy Function with visual feedback
-        function copyScript(text, btn) {
-            navigator.clipboard.writeText(text).then(() => {
-                const originalText = btn.innerHTML;
-                btn.innerHTML = "<span>COPIED!</span>";
-                btn.classList.add('brightness-125');
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.classList.remove('brightness-125');
-                }, 2000);
-            });
+        // PERMANENT KEY
+        const FIXED_KEY = "EXO-ON-TOP";
+
+        // TYPEWRITER ANIMATION (LOOP)
+        const textElement = document.getElementById('typed-text');
+        const fullText = "EXO HUB";
+        let index = 0;
+        let isDeleting = false;
+
+        function typeLoop() {
+            const currentText = fullText.substring(0, index);
+            let formattedText = "";
+            for (let i = 0; i < currentText.length; i++) {
+                if (i >= 4) {
+                    formattedText += `<span class="purple">${fullText[i]}</span>`;
+                } else {
+                    formattedText += fullText[i];
+                }
+            }
+            textElement.innerHTML = formattedText;
+
+            let typeSpeed = isDeleting ? 100 : 200;
+
+            if (!isDeleting && index < fullText.length) {
+                index++;
+            } else if (isDeleting && index > 0) {
+                index--;
+            } else if (!isDeleting && index === fullText.length) {
+                typeSpeed = 2000; 
+                isDeleting = true;
+            } else if (isDeleting && index === 0) {
+                isDeleting = false;
+                typeSpeed = 500;
+            }
+            setTimeout(typeLoop, typeSpeed);
         }
 
-        // Search Logic
-        const searchInput = document.getElementById('searchInput');
-        const scriptItems = document.querySelectorAll('.script-item');
+        // COPY FUNCTION
+        function handleCopy() {
+            const display = document.getElementById('key-text');
+            display.innerText = FIXED_KEY;
+            display.style.color = "#bc13fe";
+            
+            navigator.clipboard.writeText(FIXED_KEY);
+            
+            const btn = document.querySelector('.copy-btn');
+            const oldText = btn.innerText;
+            btn.innerText = "COPIED!";
+            btn.style.background = "#00ff88";
 
-        searchInput.addEventListener('input', (e) => {
-            const value = e.target.value.toLowerCase();
-            scriptItems.forEach(item => {
-                const title = item.getAttribute('data-title');
-                if (title.includes(value)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
+            setTimeout(() => { 
+                btn.innerText = oldText; 
+                btn.style.background = "#bc13fe";
+            }, 2000);
+        }
+
+        window.onload = typeLoop;
     </script>
-
 </body>
 </html>
+
